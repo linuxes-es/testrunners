@@ -1,0 +1,15 @@
+# .github/workflows/test-runner.yaml
+name: Test Kubernetes Runner
+
+on:
+  workflow_dispatch:  # permite lanzarlo manualmente
+
+jobs:
+  test:
+    runs-on: k8s        # label de tu runner en Kubernetes
+    steps:
+      - name: Verifica que el runner funciona
+        run: |
+          echo "Hola desde el runner en Kubernetes"
+          uname -a
+          date
